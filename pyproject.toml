@@ -1,0 +1,19 @@
+[project]
+name = "jobhopper"
+version = "0.1.0"
+description = "Lightweight file-backed evaluation job dispatcher."
+readme = "README.md"
+authors = [
+    { name = "Serrano", email = "cserrano@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "PyYAML>=6.0",
+]
+
+[project.scripts]
+jobhopper = "jobhopper.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

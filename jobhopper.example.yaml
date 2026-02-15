@@ -1,0 +1,32 @@
+paths:
+  inbox: "./state/inbox"
+  queue: "./state/queue"
+  running: "./state/running"
+  done: "./state/done"
+  failed: "./state/failed"
+  db: "./state/jobhopper.db"
+  log: "./state/jobhopper.log"
+
+poll:
+  interval_seconds: 10
+  settle_seconds: 5
+
+dispatch:
+  ssh_options: "-o BatchMode=yes -o ConnectTimeout=10"
+  transfer_mode: "scp"
+  remote_unpack_dirname: "job"
+  launch:
+    # See examples/run_job.template.sh
+    command_template: "cd {extract_dir} && bash run_job.sh '{job_id}' '{worker_inbox}' '{worker_outbox}' '{zip_name}' '{extract_dir}'"
+
+workers:
+  - name: worker-a
+    host: 10.0.0.21
+    user: alice
+    inbox_dir: /home/alice/Inbox
+    outbox_dir: /home/alice/Outbox
+  - name: worker-b
+    host: 10.0.0.22
+    user: alice
+    inbox_dir: /home/alice/Inbox
+    outbox_dir: /home/alice/Outbox
