@@ -1,6 +1,6 @@
 # jobhopper
 
-Lightweight, file-backed dispatcher for expensive evaluation jobs across SSH workers.
+Lightweight, file-backed dispatcher for expensive jobs across SSH workers.
 
 ## What it does
 
@@ -76,7 +76,7 @@ You can also start from `jobhopper.example.yaml`.
 Example worker-side script template is included at `examples/run_job.template.sh`.
 
 It shows how to:
-- run long evaluations inside the unpacked job folder
+- run long jobs inside the unpacked job folder
 - write Outbox artifact zip(s) prefixed with `{job_id}`
 - move the worker Inbox zip out of Inbox to clear worker busy state
 

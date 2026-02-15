@@ -1,7 +1,7 @@
 [project]
 name = "jobhopper"
 version = "0.1.0"
-description = "Lightweight file-backed evaluation job dispatcher."
+description = "Lightweight file-backed job dispatcher."
 readme = "README.md"
 authors = [
     { name = "Serrano", email = "cserrano@gmail.com" }
